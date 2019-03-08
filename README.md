@@ -13,3 +13,6 @@ Import-Module -Name WinSCP
 
 # Cmdlets
 Get-Command -Module WinSCP
+
+
+# Cmdlet info: http://dotps1.github.io/WinSCP/cmdlets
