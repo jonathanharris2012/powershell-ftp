@@ -19,11 +19,14 @@ try
     # Connect
     $session.Open($sessionOptions)
     # Your code
-    $session.GetFiles("/POPS/JonathanH/Scripting/schedule.json", "C:\Temp\schedule.json").Check()
-    $schedule = (Get-Content "C:\Temp\schedule.json") | ConvertFrom-Json
-    write-host "Testing"
+    # $session.GetFiles("/POPS/JonathanH/Syncing/*", "$Home\OneDrive\Work\Syncing\").Check()
+    $session.SynchronizeDirectories(
+        [WinSCP.SynchronizationMode]::Local, "$Home\OneDrive\Work\Syncing", "/POPS/JonathanH/Syncing", $False)
 }
 finally
 {
     $session.Dispose()
 }
+
+
+#cd $Home\OneDrive\Work\syncing
